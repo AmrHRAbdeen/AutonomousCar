@@ -1,0 +1,35 @@
+roscore
+
+rosnode info /node_name
+rosnode list 
+
+rostopic list
+rostopic info /topic_name
+rostopic echo /topic_name
+
+rosnode echo/sub_node_name
+rosrun ros_101 node_publisher.py
+
+roslaunch ros_101
+
+* to create a package (project):
+cd ~/catkin_ws/src
+catkin_create_pkg <project name> roscpp rospy std_msgs
+
+* building the package:
+cd ~/catkin_ws
+catkin_make
+
+* to make lauch file:
+<launch>
+  <node pkg="ros_101" type="node_publisher.py" name="node_pub">
+    <remap from="/topic_1" to="/new_topic_1" />
+  </node> 
+  <node pkg="ros_101" type="pub_node" name="pub"/> 
+  <node pkg="ros_101" type="node_subscriber.py" name=“node_sub"/>
+</launch>
+note:
+-> type="node_publisher.py" : #if the file is .py
+-> type="pub_node" : #if the file .cpp
+-> name="node_pub" : #name is like the init_node name in the code but with this line you can overwrite it
+-> <remap from="/topic_1" to="/new_topic_1" /> : #to change the topic to a new one
