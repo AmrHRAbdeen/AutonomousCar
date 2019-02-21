@@ -1,0 +1,18 @@
+sudo raspi-config -> expand file system 
+& select advanced option -> enable sound (jack)
+resolution (make it like 1280x720)
+
+#application to capture an image
+sudo apt-get install fswebcam
+
+#application to record the video
+sudo apt-get install ffmpeg
+
+#application to play the video
+sudo apt-get install mplayer
+
+#to record the video
+ffmpeg -f video4linux2 -r 25 -s 640x480 -i /dev/video0 test.avi
+
+#to play the video
+mplaer test.avi
