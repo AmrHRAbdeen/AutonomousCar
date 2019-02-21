@@ -1,0 +1,52 @@
+Adding a file to a repository on a git server goes into 3 stages : 
+1-Working copy (in your local computer) 
+2-Staging area ( when you use git add , you actually assign the files to be commited to the server) 
+3-repository ( when you use git commit , you send the files that in staging area to the repository).
+
+git init: to Create an empty Git repository (project)
+git add . : let git know that you have made some changes in the project
+git commit -m "put the message here" : to tell git to take a snapshot of this exact moment when you've 
+                                        edited the project and want to the save the new edition of it
+                                        
+git log: to display the past commits with their messages
+git log --author="mahmoud" : to display the past commits of a certain author in the porject
+                             (in case you're working with many people in the same project)
+                             
+git status: to check if the git has a view on (keeps track of) the last updated files 
+            in the project or not (if not -> write: git add . and check it again)
+            
+git diff: to display the difference between the modified file in your disk and the same file previously 
+           file stored in the project repository
+           
+git rm file.txt: to remove a file from your working directory and the repository          
+
+git commit -am "message" : Tell the command to automatically stage files that have been modified and deleted, 
+                            but new files you have not told Git about are not affected.
+                            (note: it will add all the files in your working  directory not only
+                               a single file)
+
+git checkout -- index.html: to get the last commited "index.html" file  
+                            and return it back to your working directory
+                            
+git reset HEAD <file> : to remove a file you modified and added in the
+                        the staging area from this area before commiting
+                        it to the repository since it is wrong
+                        
+                        
+git checkout <log number> -- <file you to want to restore> : to replace a missed up file with a good one
+                                                          previously stored in a previous log version
+                                                          in the repository
+                            
+git remote add <reponame as you like> <repohttplink>: to rename the repo HTTP link
+git remote: to display the name of the repo HTTP link  
+
+git push -u avr-cots master: to push the files from the working directory to your git hub repo                         
+                            
+#to add the repo in the local directory                            
+git stash
+git pull origin master
+git stash pop
+                            
+                            
+                            
+                            
