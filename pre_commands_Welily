@@ -16,3 +16,11 @@ ffmpeg -f video4linux2 -r 25 -s 640x480 -i /dev/video0 test.avi
 
 #to play the video
 mplaer test.avi
+
+#to add new updated files your branch after forking:
+1) first update this file outside the local directory
+2) then go to the local repo in the terminal
+3) run: git remote add <add your branh repo name> <your branch link>
+4) run: pull <your branch name> master (the repo files will be added to the local repo)
+5) add the new file in the local repo
+6) run: git push <your repo name> master
